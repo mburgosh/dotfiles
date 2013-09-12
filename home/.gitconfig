@@ -1,6 +1,8 @@
 [user]
 	name = Mauricio Burgos Herrera
 	email = mburgosherrera@gmail.com
+[color]
+        ui=auto
 [alias] 
         tree = "!. ~/.githelpers && pretty_git_log"
 	t = !git tree
@@ -8,5 +10,6 @@
 	r = !git t -30
 	tr = !git t -30
 	hp = "!. ~/.githelpers && show_git_head"
-[color]
-	ui=auto
+
+	#short command = long command
+	uncommit = reset --soft HEAD^
