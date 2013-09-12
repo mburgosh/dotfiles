@@ -1,0 +1,12 @@
+[user]
+	name = Mauricio Burgos Herrera
+	email = mburgosherrera@gmail.com
+[alias] 
+        tree = "!. ~/.githelpers && pretty_git_log"
+	t = !git tree
+	ta = !git tree --all
+	r = !git t -30
+	tr = !git t -30
+	hp = "!. ~/.githelpers && show_git_head"
+[color]
+	ui=auto
