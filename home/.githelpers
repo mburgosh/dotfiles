@@ -19,7 +19,7 @@ AUTHOR="%C(bold blue)<%an>%Creset"
 REFS="%C(bold red)%d%Creset"
 SUBJECT="%s"
 
-FORMAT="$HASH $RELATIVE_TIME $AUTHOR $REFS $SUBJECT"
+FORMAT="$HASH}$RELATIVE_TIME}$AUTHOR}$REFS $SUBJECT"
 
 ANSI_BLACK='\033[30m'
 ANSI_BLACK_BOLD='\033[0;30;1m'
@@ -52,7 +52,11 @@ pretty_git_log() {
         # Replace (2 years, 5 months) with (2 years)
         sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?\)/\1)/' |
 	# Line columns up based on } delimiter
-        #column -s '}' -t |
+        column -s '}' -t |
+	# Color HEAD specially
+        #sed -Ee "s/\(.*(HEAD).*\)/$(printf $ANSI_RESET)$(printf $ANSI_CYAN_BOLD)\1$(printf $ANSI_RED)/" |
+	# Color remote branches specially
+	#sed -Ee "s/\(.*(\[w-]+\/[w-]+).*\)/$(printf $ANSI_RESET)$(printf $ANSI_GREEN)\1$(printf $ANSI_RED)/" |
         # Color merge commits specially
         sed -Ee "s/(Merge branch .* into .*$)/$(printf $ANSI_RED)\1$(printf $ANSI_RESET)/" |
 	# Page only if we need to
