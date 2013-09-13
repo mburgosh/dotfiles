@@ -52,6 +52,9 @@ tmtags
 *.iws
 .idea/
 
+# maven
+target/
+
 # Emacs files
 *~
 \#*\#
