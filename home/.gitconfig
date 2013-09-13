@@ -13,3 +13,5 @@
 
 	#short command = long command
 	uncommit = reset --soft HEAD^
+[core]
+	excludesfile = /home/mauricio/.gitignore
