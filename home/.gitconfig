@@ -15,3 +15,5 @@
 	uncommit = reset --soft HEAD^
 [core]
 	excludesfile = /home/mauricio/.gitignore
+[push]
+	default = current
